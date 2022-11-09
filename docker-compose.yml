@@ -7,3 +7,14 @@ services:
       - "5000:5000"
     volumes:
       - ./src/server:/server
+
+  client:
+    build: ./src/client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/client:/client
+      - node_modules:/client/node_modules
+
+volumes:
+  node_modules:
